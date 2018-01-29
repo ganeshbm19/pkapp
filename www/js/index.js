@@ -68,3 +68,14 @@ document.addEventListener('deviceready', function () {
   // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
   // window.plugins.OneSignal.syncHashedEmail(userEmail);
 }, false);
+
+
+  function onDeviceReady() {
+    if (navigator.connection.type == Connection.NONE) {
+      navigator.notification.alert('An internet connection is required to continue');
+    } else {
+      window.location="http://www.puduvaikural.in";
+    }
+  }
+  document.addEventListener("deviceready", onDeviceReady, false);
+
